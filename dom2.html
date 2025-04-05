@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2</title>
+    <style>
+        body {
+          text-align: center;
+          padding-top: 50px;
+          font-family: Arial, sans-serif;
+        }
+    
+        input, button {
+          padding: 10px;
+          font-size: 16px;
+          margin: 5px;
+        }
+    
+        p {
+          margin-top: 20px;
+          font-size: 20px;
+          color: #333;
+        }
+      </style>
+</head>
+<body>
+
+    <input type="text" id="entradaTexto" placeholder="Digite algo...">
+  <button id="mostrarTexto">Mostrar</button>
+
+  <p id="paragrafo"></p>
+
+  <script>
+    const botao = document.getElementById('mostrarTexto');
+    const input = document.getElementById('entradaTexto');
+    const paragrafo = document.getElementById('paragrafo');
+
+    botao.addEventListener('click', () => {
+      const textoDigitado = input.value;  
+      paragrafo.textContent = textoDigitado;  
+    });
+
+  </script>
+</body>
+</html>

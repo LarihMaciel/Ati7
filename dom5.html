@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 5</title>
+    <style>
+        body {
+          text-align: center;
+          padding-top: 30px;
+          font-family: Arial, sans-serif;
+        }
+    
+        form {
+          display: inline-block;
+          text-align: left;
+        }
+    
+        input, textarea {
+          display: block;
+          width: 300px;
+          margin-bottom: 10px;
+          padding: 8px;
+          font-size: 16px;
+        }
+    
+        button {
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+    
+        #resultado {
+          margin-top: 30px;
+          font-size: 18px;
+        }
+      </style>
+</head>
+<body>
+
+      <form id="formulario">
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="email" id="email" placeholder="E-mail" required>
+        <textarea id="mensagem" placeholder="Mensagem" rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    
+      <div id="resultado"></div>
+    
+      <script>
+        const formulario = document.getElementById('formulario');
+        const resultado = document.getElementById('resultado');
+    
+        formulario.addEventListener('submit', (evento) => {
+          evento.preventDefault(); 
+    
+          const nome = document.getElementById('nome').value;
+          const email = document.getElementById('email').value;
+          const mensagem = document.getElementById('mensagem').value;
+    
+          resultado.innerHTML = `
+            <h2>Dados enviados:</h2>
+            <p><strong>Nome:</strong> ${nome}</p>
+            <p><strong>E-mail:</strong> ${email}</p>
+            <p><strong>Mensagem:</strong> ${mensagem}</p>
+          `;
+    
+          formulario.reset(); 
+        });
+
+      </script>
+</body>
+</html>

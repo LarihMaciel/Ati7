@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 3</title>
+    <style>
+        body {
+          text-align: center;
+          padding-top: 50px;
+          font-family: Arial, sans-serif;
+        }
+    
+        button {
+          padding: 10px 20px;
+          font-size: 20px;
+          margin: 5px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+    
+        #numero {
+          font-size: 30px;
+          margin: 0 20px;
+        }
+      </style>
+</head>
+<body>
+    
+  <button id="diminuir">-</button>
+  <span id="numero">0</span>
+  <button id="aumentar">+</button>
+
+  <script>
+    const botaoMenos = document.getElementById('diminuir');
+    const botaoMais = document.getElementById('aumentar');
+    const numero = document.getElementById('numero');
+
+    let contador = 0; // Começa em 0
+
+    botaoMenos.addEventListener('click', () => {
+      contador--;
+      numero.textContent = contador;
+    });
+
+    botaoMais.addEventListener('click', () => {
+      contador++;
+      numero.textContent = contador;
+    });
+
+  </script>
+</body>
+</html>
